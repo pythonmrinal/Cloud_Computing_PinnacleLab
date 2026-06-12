@@ -10,12 +10,3 @@ Mark Present, Absent, or Late for each date
 View attendance percentage and summary cards
 Filter attendance by date
 Export attendance records to CSV
-Works locally in demo mode
-Supports Firebase Firestore for cloud database storage
-Deployable on Firebase Hosting, Netlify, Vercel, or GitHub Pages
-Tech Stack
-HTML5
-CSS3
-JavaScript
-Firebase Firestore
-Firebase Hosting
