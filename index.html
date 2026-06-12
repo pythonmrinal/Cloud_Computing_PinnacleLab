@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Cloud Computing Project</p>
+        <h1>Attendance System</h1>
+      </div>
+      <div class="cloud-status" id="cloudStatus">Checking storage...</div>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls-panel">
+        <div class="section-heading">
+          <h2>Members</h2>
+          <span id="memberCount">0 members</span>
+        </div>
+
+        <form id="memberForm" class="member-form">
+          <label>
+            Full name
+            <input id="memberName" type="text" placeholder="Example: Aisha Khan" required>
+          </label>
+          <label>
+            Department / Class
+            <input id="memberGroup" type="text" placeholder="Example: Cloud Team" required>
+          </label>
+          <button type="submit">Add Member</button>
+        </form>
+
+        <div class="member-list" id="memberList"></div>
+      </section>
+
+      <section class="panel attendance-panel">
+        <div class="section-heading">
+          <div>
+            <h2>Daily Attendance</h2>
+            <p>Choose a date and mark each member.</p>
+          </div>
+          <label class="date-picker">
+            Date
+            <input id="attendanceDate" type="date">
+          </label>
+        </div>
+
+        <div class="summary-grid">
+          <article>
+            <span>Total</span>
+            <strong id="totalCount">0</strong>
+          </article>
+          <article>
+            <span>Present</span>
+            <strong id="presentCount">0</strong>
+          </article>
+          <article>
+            <span>Absent</span>
+            <strong id="absentCount">0</strong>
+          </article>
+          <article>
+            <span>Late</span>
+            <strong id="lateCount">0</strong>
+          </article>
+        </div>
+
+        <div class="attendance-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Group</th>
+                <th>Status</th>
+                <th>Attendance %</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceBody"></tbody>
+          </table>
+        </div>
+
+        <div class="actions">
+          <button id="saveAttendance" type="button">Save Attendance</button>
+          <button id="exportCsv" class="secondary" type="button">Export CSV</button>
+        </div>
+      </section>
+    </main>
+
+    <template id="emptyStateTemplate">
+      <div class="empty-state">
+        <strong>No members yet</strong>
+        <p>Add members to start marking attendance.</p>
+      </div>
+    </template>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
+
